@@ -1,0 +1,27 @@
+{
+  "name": "store-app",
+  "version": "1.0.0",
+  "description": "Devops crash course",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node -e js",
+    "test": "./node_modules/.bin/mocha",
+    "debug": "set DEBUG=express:* & nodemon index.js --exec babel-node -e js"
+  },
+  "dependencies": {
+    "ajv": "^8.7.1",
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "request": "^2.88.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

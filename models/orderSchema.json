@@ -1,0 +1,35 @@
+{
+    "postBody":{
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "description": "Ordered Item Id",
+          "type": "number"
+        },
+        "shoppingCartId": {
+          "description": "Shopping cart Id",
+          "type": "number"
+        },
+        "requestedQnty": {
+          "description": "Requested quantity of item",
+          "type": "number",
+          "minimum": 1
+        }
+      },
+      "required": ["itemId", "shoppingCartId","requestedQnty" ],
+      "additionalProperties": false
+    },
+    "putBody":{
+      "type": "object",
+      "properties": {
+          "requestedQnty": {
+            "description": "Requested quantity of item",
+            "type": "number",
+            "minimum": 1
+          }
+      },
+      "required": ["requestedQnty"],
+      "additionalProperties": false
+    }
+  }
+  
