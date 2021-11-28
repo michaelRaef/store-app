@@ -15,5 +15,5 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         source: "./"
-        target: "/home/ubuntu/store-app"
+        target: "store-app2"
 
