@@ -15,6 +15,6 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         source: "./"
-        target: "/store-app/*"
+        target: "/store-app2"
         overwrite: true
 
