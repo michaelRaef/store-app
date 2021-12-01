@@ -41,7 +41,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        source: "Dockerfile,docker-compose.yaml"
+        source: "*"
         target: "store-app"
   run:
     name: Run
