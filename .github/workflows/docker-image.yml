@@ -30,6 +30,7 @@ jobs:
           tags: michaelraef/store-app:latest
   build:
     name: Deploy
+    needs: docker
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -42,3 +43,18 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "Dockerfile,docker-compose.yaml"
         target: "store-app"
+  run:
+    name: Run
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd store-app
+          docker-compose pull && docker-compose up -d
